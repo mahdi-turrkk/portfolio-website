@@ -1,7 +1,8 @@
 <template>
   <div :class="{'dark-theme' : isDark , 'light-theme' : !isDark}"
        :style="{'direction' : useLocalization().getDirection}"
-       class="appStaticColors bg-background-3 min-h-screen w-screen"
+       class="appStaticColors bg-background-3 min-h-screen w-screen scrollBar"
+       style="scroll-behavior: smooth"
   >
     <router-view/>
   </div>
@@ -56,5 +57,9 @@ let isDark = computed(() => {
 
 .dir-rtl {
   direction: rtl;
+}
+
+::-webkit-scrollbar {
+  width: 0;
 }
 </style>
