@@ -1,6 +1,6 @@
 <template>
   <div
-      class="w-screen pt-20 bg-background-2">
+      class="w-screen pt-20 bg-background-2" id="Projects">
     <div class="text-center mb-4 md:mb-12">
       <div class="text-3xl md:text-5xl font-bold text-info-1">
         {{ locale.projects }}

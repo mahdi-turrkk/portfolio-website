@@ -8,7 +8,7 @@
         <a v-for="(route,index) in routes" @click="showRoutesMenu = false" :href="route.path">
           <div
                class="text-info-3 font-bold text-base cursor-pointer md:text-lg hover:text-primary-3 hover:underline hover:underline-offset-[15px] hover:underline-2 hover:underline-info-2 transition-all duration-200"
-               :class="{'text-primary-3 underline underline-offset-[15px] underline-2 underline-info-2' : $route.fullPath === route.path || $route.fullPath === '/' + route.path , 'ml-8' : isRtl && index !== routes.length-1 , 'mr-8' : !isRtl && index !== routes.length-1}"
+               :class="{'text-primary-3 underline underline-offset-[15px] underline-2 underline-info-2' : $route.fullPath === route.path || $route.fullPath === '/' + route.path || $route.fullPath === '/' + route.activeLink , 'ml-8' : isRtl && index !== routes.length-1 , 'mr-8' : !isRtl && index !== routes.length-1}"
           >{{ route.title }}
           </div>
         </a>
@@ -86,7 +86,7 @@
       <a v-for="route in routes" @click="showRoutesMenu = false" :href="route.path">
         <div
              class="text-info-3 font-bold text-xl cursor-pointer md:text-lg hover:text-primary-3 hover:underline hover:underline-offset-[15px] hover:underline-2 hover:underline-info-2 transition-all duration-200 text-center"
-             :class="{'text-primary-3 underline underline-offset-[15px] underline-2 underline-info-2' : $route.fullPath === route.path || $route.fullPath === '/' + route.path}"
+             :class="{'text-primary-3 underline underline-offset-[15px] underline-2 underline-info-2' : $route.fullPath === route.path || $route.fullPath === '/' + route.path || $route.fullPath === '/' + route.activeLink}"
         >{{ route.title }}
         </div>
       </a>
@@ -129,7 +129,8 @@ watch(isRtl, () => {
 let routes = ref([
   {
     title: locale.value.home,
-    path: "/",
+    path: "#",
+    activeLink : ''
   },
   {
     title: locale.value.about,
