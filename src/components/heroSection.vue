@@ -1,6 +1,6 @@
 <template>
   <div
-      class="min-h-screen flex md:flex-row md:justify-between md:px-60 justify-center items-center pt-16 flex-col-reverse relative">
+      class="min-h-screen flex lg:flex-row lg:justify-between lg:px-60 justify-center items-center pt-16 flex-col-reverse relative">
     <img src="../assets/bg-filter.png" class="absolute w-screen h-screen top-0 right-0 z-0" :class="{'opacity-80' : !isDark , 'opacity-5' : isDark}">
     <div class="mt-10 md:mt-0 px-12 md:px-16 z-10">
       <div class="uppercase text-2xl text-primary-3">

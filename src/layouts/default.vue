@@ -5,11 +5,13 @@
         class="hidden md:flex pt-3 pb-4 px-14 justify-between shadow-lg w-full items-center fixed z-50 transition-all duration-200" :class="headerBackgroundColor">
       <div class="flex">
         <!--        routes in header-->
-        <div v-for="(route,index) in routes" @click="router.push(route.path)"
-             class="text-info-3 font-bold text-base cursor-pointer md:text-lg hover:text-primary-3 hover:underline hover:underline-offset-[15px] hover:underline-2 hover:underline-info-2 transition-all duration-200"
-             :class="{'text-primary-3 underline underline-offset-[15px] underline-2 underline-info-2' : $route.fullPath === route.path || $route.fullPath === '/' + route.path , 'ml-8' : isRtl && index !== routes.length-1 , 'mr-8' : !isRtl && index !== routes.length-1}"
-        >{{ route.title }}
-        </div>
+        <a v-for="(route,index) in routes" @click="showRoutesMenu = false" :href="route.path">
+          <div
+               class="text-info-3 font-bold text-base cursor-pointer md:text-lg hover:text-primary-3 hover:underline hover:underline-offset-[15px] hover:underline-2 hover:underline-info-2 transition-all duration-200"
+               :class="{'text-primary-3 underline underline-offset-[15px] underline-2 underline-info-2' : $route.fullPath === route.path || $route.fullPath === '/' + route.path , 'ml-8' : isRtl && index !== routes.length-1 , 'mr-8' : !isRtl && index !== routes.length-1}"
+          >{{ route.title }}
+          </div>
+        </a>
       </div>
       <div class="flex justify-end items-center">
         <div class="flex items-center justify-end">
@@ -81,11 +83,13 @@
         <i class="pi pi-times text-info-3 text-xl" @click="showRoutesMenu = !showRoutesMenu"/>
       </div>
       <!--        routes in header-->
-      <div v-for="(route) in routes" @click="router.push(route.path);showRoutesMenu = false"
-           class="text-info-3 font-bold text-xl cursor-pointer md:text-lg hover:text-primary-3 hover:underline hover:underline-offset-[15px] hover:underline-2 hover:underline-info-2 transition-all duration-200 text-center"
-           :class="{'text-primary-3 underline underline-offset-[15px] underline-2 underline-info-2' : $route.fullPath === route.path || $route.fullPath === '/' + route.path}"
-      >{{ route.title }}
-      </div>
+      <a v-for="route in routes" @click="showRoutesMenu = false" :href="route.path">
+        <div
+             class="text-info-3 font-bold text-xl cursor-pointer md:text-lg hover:text-primary-3 hover:underline hover:underline-offset-[15px] hover:underline-2 hover:underline-info-2 transition-all duration-200 text-center"
+             :class="{'text-primary-3 underline underline-offset-[15px] underline-2 underline-info-2' : $route.fullPath === route.path || $route.fullPath === '/' + route.path}"
+        >{{ route.title }}
+        </div>
+      </a>
     </div>
     <div class="w-full">
       <slot/>
@@ -143,16 +147,13 @@ let routes = ref([
 
 let barColor = ref("")
 let headerBackgroundColor = reactive({
-  'bg-background-3' : false
+  'backdrop-blur-3xl' : false
 })
 
 onMounted(() => {
   window.addEventListener("scroll", (e) => {
     console.log(barColor.value)
-    if (window.pageYOffset > window.innerHeight - 150)
-      headerBackgroundColor["bg-background-3"] = true
-    else
-      headerBackgroundColor["bg-background-3"] = false
+    headerBackgroundColor["backdrop-blur-3xl "] = window.pageYOffset > window.innerHeight - 650;
   });
 })
 
