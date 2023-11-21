@@ -6,7 +6,7 @@
       <div>
         Designed and Developed By
         <span class="text-info-2">
-                <a href="https://github.com/mahdi-turrkk">Mahdi Chavoshi</a>
+                <a href="https://github.com/mahdi-turrkk" target="_blank">Mahdi Chavoshi</a>
       </span>
       </div>
     </div>

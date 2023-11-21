@@ -1,20 +1,19 @@
 <template>
-  <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
+    <div class="lds-ring -translate-y-[5px] translate-x-[5px]"><div></div><div></div><div></div><div></div></div>
 </template>
 
 <style>
 .lds-ring {
-  display: inline-block;
   position: relative;
-  width: 25px;
-  height: 25px;
+  height: 17px;
+  width: 17px;
 }
 .lds-ring div {
   box-sizing: border-box;
   display: block;
   position: absolute;
-  width: 20px;
-  height: 20px;
+  width: 10px;
+  height: 10px;
   margin: 8px;
   border: 2px solid #ffffff;
   border-radius: 50%;
@@ -40,3 +39,5 @@
 }
 
 </style>
+<script setup>
+</script>

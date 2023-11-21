@@ -7,7 +7,7 @@
         {{ locale.aboutMe }}
       </div>
       <div class="text-justify text-xl md:text-2xl text-info-3 mt-4 md:mt-8 leading-relaxed md:leading-loose">
-        {{ locale.aboutDetailed }}
+        {{ info.aboutDetailed }}
       </div>
     </div>
   </div>
@@ -15,6 +15,7 @@
 <script setup>
 import {computed} from "vue";
 import {useLocalization} from "../store/localizationStore.js";
+import {usePersonInformationStore} from "../store/personInformationStore.js";
 
 let locale = computed(() => {
   return useLocalization().getLocale
@@ -23,5 +24,10 @@ let locale = computed(() => {
 let isRtl = computed(() => {
   return useLocalization().getDirection === 'rtl'
 })
+
+let info = computed(() => {
+  return usePersonInformationStore().getPersonInfo
+})
+
 
 </script>

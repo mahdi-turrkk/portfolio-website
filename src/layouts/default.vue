@@ -23,10 +23,10 @@
             <div class="absolute left-0 rounded-xl" v-if="showLangMenu">
               <div class="flex flex-col w-max rounded-xl bg-background-2 bg-opacity-50">
                 <div class="text-info-3 px-3 py-2 hover:bg-background-2 hover:text-primary-3 cursor-pointer rounded-xl"
-                     @click="useLocalization().changeLanguage(['🇮🇷','fa' , 'rtl']);showLangMenu = false">🇮🇷 FA
+                     @click="changeLanguage(['🇮🇷','fa' , 'rtl']);showLangMenu = false">🇮🇷 FA
                 </div>
                 <div class="text-info-3 px-3 py-2 hover:bg-background-2 hover:text-primary-3 cursor-pointer rounded-xl"
-                     @click="useLocalization().changeLanguage(['🇺🇸','en' , 'ltr']);showLangMenu = false">🇺🇸 EN
+                     @click="changeLanguage(['🇺🇸','en' , 'ltr']);showLangMenu = false">🇺🇸 EN
                 </div>
               </div>
             </div>
@@ -40,7 +40,9 @@
         </div>
         <!--      logo of header-->
         <div>
-          <img :src="logoSource" :alt="locale.name" class="w-14 cursor-pointer" @click="router.push('/')">
+          <a href="#">
+            <img :src="logoSource" :alt="locale.name" class="w-14 cursor-pointer">
+          </a>
         </div>
       </div>
     </div>
@@ -58,10 +60,10 @@
             <div class="absolute left-0 rounded-xl" v-if="showLangMenu">
               <div class="flex flex-col w-max rounded-xl bg-background-2 bg-opacity-50">
                 <div class="text-info-3 px-3 py-2 hover:bg-background-2 hover:text-primary-3 cursor-pointer rounded-xl"
-                     @click="useLocalization().changeLanguage(['🇮🇷','fa' , 'rtl']);showLangMenu = false">🇮🇷 FA
+                     @click="changeLanguage(['🇮🇷','fa' , 'rtl']);showLangMenu = false">🇮🇷 FA
                 </div>
                 <div class="text-info-3 px-3 py-2 hover:bg-background-2 hover:text-primary-3 cursor-pointer rounded-xl"
-                     @click="useLocalization().changeLanguage(['🇺🇸','en' , 'ltr']);showLangMenu = false">🇺🇸 EN
+                     @click="changeLanguage(['🇺🇸','en' , 'ltr']);showLangMenu = false">🇺🇸 EN
                 </div>
               </div>
             </div>
@@ -102,6 +104,7 @@ import {computed, onMounted, reactive, ref, watch} from "vue";
 import router from "../router/index.js";
 import {useLocalization} from "../store/localizationStore.js";
 import {useDataStore} from "../store/dataStore.js";
+import {usePersonInformationStore} from "../store/personInformationStore.js";
 
 const locale = computed(() => {
   return useLocalization().getLocale
@@ -158,5 +161,9 @@ onMounted(() => {
   });
 })
 
+const changeLanguage = (payload) => {
+  useLocalization().changeLanguage(payload)
+  usePersonInformationStore().changeLanguage(payload)
+}
 
 </script>

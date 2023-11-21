@@ -8,30 +8,32 @@
       </div>
       <div class="flex items-end mt-4">
         <div class="text-5xl sm:text-6xl text-info-3">
-          {{ locale.name }}
+          {{ info.name }}
         </div>
         <div class="text-xl mr-2 text-info-1">
           {{ isRtl ? locale.is : '' }}
         </div>
       </div>
       <div class="uppercase text-primary-3 text-2xl sm:text-3xl" :class="{'mt-8' : isRtl , 'mt-4' : !isRtl}">
-        {{ locale.role }}
+        {{ info.role }}
       </div>
-      <div class="text-base md:text-lg text-info-1 max-w-lg text-justify mt-4">{{ locale.aboutSummary }}</div>
+      <div class="text-base md:text-lg text-info-1 max-w-lg text-justify mt-4">{{ info.aboutSummary }}</div>
       <div class="flex mt-6">
-        <a class="text-center d-inline-block" style="cursor: pointer" :href="resume" download="mahdi-chavoshi-resume.pdf">
+        <a class="text-center d-inline-block" style="cursor: pointer" :href="resume" :download="`${info.name}-resume.pdf`">
           <button
               class="rounded-xl bg-primary-2 text-gray-100 uppercase px-6 py-2 hover:bg-primary-3 transition-all duration-200"
               :class="{'ml-4' : isRtl , 'mr-4' : !isRtl}">{{ locale.downloadCV }}
           </button>
         </a>
-        <button
-            class="rounded-xl border-2 border-primary-3 bg-background-2 hover:bg-background-1 text-info-1 uppercase px-6 py-2"
-            @click="router.push('#Projects')">{{ locale.seeProjects }}
-        </button>
+        <a href="#Projects">
+          <button
+              class="rounded-xl border-2 border-primary-3 bg-background-2 hover:bg-background-1 text-info-1 uppercase px-6 py-2"
+              @click="router.push('#Projects')">{{ locale.seeProjects }}
+          </button>
+        </a>
       </div>
       <div class="flex mt-4">
-        <a v-for="socialMedia in socialMedias" :href="socialMedia.link" class="decoration-0"
+        <a v-for="socialMedia in info.socialMedias" :href="socialMedia.link" class="decoration-0"
            :class="{'ml-4' : isRtl , 'mr-4' : !isRtl}">
           <button class="rounded-full hover:bg-background-2 w-12 h-12 flex justify-center items-center">
             <i class="pi text-primary-3 text-2xl" :class="socialMedia.iconClass"/>
@@ -52,9 +54,14 @@ import {useLocalization} from "../store/localizationStore.js";
 import {useDataStore} from "../store/dataStore.js";
 import englishResume from '/src/assets/English-Resume.pdf';
 import persianResume from '/src/assets/Persian-Resume.pdf';
+import {usePersonInformationStore} from "../store/personInformationStore.js";
 
 let locale = computed(() => {
   return useLocalization().getLocale
+})
+
+let info = computed(() => {
+  return usePersonInformationStore().getPersonInfo
 })
 
 let isRtl = computed(() => {
@@ -68,27 +75,4 @@ let isDark = computed(() => {
 let resume = computed(() => {
   return useLocalization().getLanguage === 'fa' ? persianResume : englishResume
 })
-
-const socialMedias = ref([
-  {
-    title: 'instagram',
-    iconClass: {'pi-instagram': true},
-    link: 'https://instagram.com/mahdi_turrkk'
-  },
-  {
-    title: 'github',
-    iconClass: {'pi-github': true},
-    link: 'https://github.com/mahdi-turrkk'
-  },
-  {
-    title: 'linkedin',
-    iconClass: {'pi-linkedin': true},
-    link: 'https://linkedin.com/in/mahdi-chavoshi'
-  },
-  {
-    title: 'telegram',
-    iconClass: {'pi-telegram': true},
-    link: 'https://t.me/mahdi_turrkk'
-  },
-])
 </script>
