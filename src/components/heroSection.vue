@@ -1,13 +1,13 @@
 <template>
   <div
-      class="min-h-screen flex lg:flex-row lg:justify-between lg:px-60 justify-center items-center pt-16 flex-col-reverse relative">
+      class="min-h-screen flex lg:flex-row lg:justify-between xl:px[10%] 2xl:px-[15%] justify-center items-center pt-24 md:pt-16 flex-col-reverse relative">
     <img src="../assets/bg-filter.png" class="absolute w-full h-full top-0 right-0 z-0" :class="{'opacity-80' : !isDark , 'opacity-5' : isDark}">
-    <div class="mt-10 md:mt-0 px-12 md:px-16 z-10">
+    <div class="mt-6 md:mt-0 px-12 md:px-16 z-10">
       <div class="uppercase text-2xl text-primary-3">
         {{ locale.greeting }}
       </div>
       <div class="flex items-end mt-4">
-        <div class="text-5xl sm:text-6xl text-info-3">
+        <div class="text-4xl sm:text-5xl md::text-6xl text-info-3">
           {{ info.name }}
         </div>
         <div class="text-xl mr-2 text-info-1">
@@ -21,18 +21,18 @@
       <div class="flex mt-6">
         <a class="text-center d-inline-block" style="cursor: pointer" :href="resume" :download="`${info.name}-resume.pdf`">
           <button
-              class="rounded-xl bg-primary-2 text-gray-100 uppercase px-6 py-2 hover:bg-primary-3 transition-all duration-200"
+              class="rounded-xl bg-primary-2 text-gray-100 uppercase px-6 py-auto h-10 hover:bg-primary-3 transition-all duration-200 text-sm md:text-base whitespace-nowrap"
               :class="{'ml-4' : isRtl , 'mr-4' : !isRtl}">{{ locale.downloadCV }}
           </button>
         </a>
         <a href="#Projects">
           <button
-              class="rounded-xl border-2 border-primary-3 bg-background-2 hover:bg-background-1 text-info-1 uppercase px-6 py-2"
+              class="rounded-xl border-2 border-primary-3 bg-background-2 hover:bg-background-1 text-info-1 uppercase px-6 py-auto h-10 text-sm md:text-base whitespace-nowrap"
               @click="router.push('#Projects')">{{ locale.seeProjects }}
           </button>
         </a>
       </div>
-      <div class="flex mt-4">
+      <div class="flex mt-4 mb-4 md:mb-0 justify-center md:justify-start">
         <a v-for="socialMedia in info.socialMedias" :href="socialMedia.link" class="decoration-0"
            :class="{'ml-4' : isRtl , 'mr-4' : !isRtl}">
           <button class="rounded-full hover:bg-background-2 w-12 h-12 flex justify-center items-center">
@@ -41,9 +41,7 @@
         </a>
       </div>
     </div>
-    <div class="z-10">
-      <hero-section-image/>
-    </div>
+    <hero-section-image/>
   </div>
 </template>
 <script setup>

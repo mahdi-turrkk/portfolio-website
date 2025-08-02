@@ -8,8 +8,10 @@ export const usePersonInformationStore = defineStore('personInformation',{
             fa : {
                 name : 'مهدی چاوشی',
                 role: "توسعه دهنده فرانت‌اند",
-                aboutSummary: 'توسعه‌دهنده فرانت‌اند با بیش از یک سال تجربه، در خلق تجربیات دیجیتال شگفت‌انگیز. آماده برای تبدیل ایده شما به واقعیت.',
-                aboutDetailed: 'من توسعه‌دهنده فرانت‌اند و مهندس کامپیوتر در تبریز هستم. تخصص من در ایجاد تجارب کاربری جذاب با استفاده از Nuxt.js، Vue.js ،Tailwind و Vuetify.js است. به مدت سه سال به عنوان توسعه‌دهنده فرانت‌اند مشغول به کار بوده‌ام، که دو سال از آن‌ها در دانشگاه به توسعه ی پروژه های دانشگاهی اختصاص داشته و یک سال در کار حرفه‌ای فعالیت داشته‌ام.',
+                aboutSummary: 'توسعه‌دهنده فرانت‌اند با بیش از سه سال تجربه، در خلق تجربیات دیجیتال شگفت‌انگیز. آماده برای تبدیل ایده شما به واقعیت.',
+                aboutDetailed: 'من مهدی چاوشی هستم، توسعه‌دهنده فرانت‌اند و مهندس کامپیوتر ساکن تبریز، ایران. در زمینه طراحی و توسعه وب‌اپلیکیشن‌های مدرن و واکنش‌گرا با استفاده از Nuxt.js، Vue.js، Tailwind CSS و Vuetify تخصص دارم.\n' +
+                    'با بیش از ۳ سال تجربه حرفه‌ای در توسعه فرانت‌اند و همچنین پیش‌زمینه‌ای قوی در حوزه دانشگاهی، در حال حاضر دانشجوی کارشناسی ارشد معماری سیستم‌های کامپیوتری هستم و بر روی موضوعات یادگیری فدرال و فناوری بلاک‌چین تحقیق می‌کنم. همچنین به‌عنوان نویسنده اول، مقاله‌ای با عنوان "پیاده‌سازی بهینه یک مدل سبک هوش مصنوعی برای تشخیص دست‌خط روی FPGA" در کنفرانس IEEE منتشر کرده‌ام.\n' +
+                    'مشتاق همکاری در پروژه‌ها و موقعیت‌های شغلی مرتبط با توسعه فرانت‌اند و خلق تجربه‌های کاربری حرفه‌ای هستم.',
                 address : 'ایران ، تبریز ، چایکنار ، بعد‌از پل منصور ، روبروی شهرداری منطقه یک ، برج مشاوران ، واحد B5',
                 phoneNumber : '۰۹۱۴۱۰۲۳۶۸۲',
                 emailAddress : 'Mahdichavoshi14@gmail.com',
@@ -118,7 +120,7 @@ export const usePersonInformationStore = defineStore('personInformation',{
                         role : 'توسعه دهنده فرانت‌اند',
                         start : '۱۴۰۱',
                         end : 'تاکنون',
-                        projects : 'X-ui Panel Manager'
+                        projects : 'X-ui Panel Manager - Danayan crowd - Zarin crowd - Award Maven - Consulting Platform'
                     },
                 ],
                 projects : [
@@ -132,7 +134,7 @@ export const usePersonInformationStore = defineStore('personInformation',{
                     },
                     {
                         title : "مرکاتو۲۴ (دمو)",
-                        link : 'https://Merkato24.netlify.app',
+                        link : 'https://Merkato24.com',
                         imgSrc : '/merkato24.webp',
                         description : 'مرکاتو ۲۴ یک بازار دیجیتال برای آفریقاست و فرانت‌اند آن با استفاده از Nuxt.js 2، Vue.js 2 و Vuetify 2 توسعه یافته است. این وب‌اپلیکیشن سه پنل دارد: عمومی، کاربر و مدیریت که از طریق آدرس‌های "/" و "/User" و "/Admin" قابل دسترسی هستند. توسعه فرانت‌اند وب‌سایت به پایان رسیده است و در حال حاضر توسعه قسمت بک‌اند در حال انجام است.نسخه‌ی دموی مرکاتو ۲۴ در دسترس است.',
                         technologies : 'Nuxt.js , vuetify , Vue.js , PWA',
@@ -147,6 +149,37 @@ export const usePersonInformationStore = defineStore('personInformation',{
                         role : 'توسعه دهنده فرانت‌اند',
                         github : 'https://github.com/mahdi-turrkk/x-ui-panel-manager'
                     },
+                    {
+                        title : "دانایان کراد",
+                        link : 'https://crowd.danayan.broker',
+                        imgSrc : '/danayan-main.webp',
+                        description : 'این وبسایت یک پلتفرم تامین مالی جمعی ایرانی است که زیر مجموعه کارگزاری دانایان میباشد و فرانت اند آن با استفاده از Vue.js 3 و Tailwindcss توسعه یافته و دارای پنل های عمومی و کاربر و ادمین میباشد.',
+                        technologies : 'Vue.js , Tailwind Css',
+                        role : 'توسعه دهنده فرانت‌اند',
+                    },
+                    {
+                        title : "زرین کراد",
+                        link : 'https://zarincrowd.com/',
+                        imgSrc : '/zarin-main.webp',
+                        description : 'این وبسایت یک پلتفرم تامین مالی جمعی ایرانی است که تحت نظارت نهادمالی کارگزاری دانایان فعالیت میکند و فرانت اند آن با استفاده از Vue.js 3 و Tailwindcss توسعه یافته و دارای پنل های عمومی و کاربر و ادمین میباشد.',
+                        technologies : 'Vue.js , Tailwind Css',
+                        role : 'توسعه دهنده فرانت‌اند',
+                    },
+                    {
+                        title : "Award Maven",
+                        link : 'https://awardmaven.com/portal',
+                        imgSrc : '/awardMaven.webp',
+                        description: 'مشارکت در مهاجرت پورتال قدیمی Award Maven از معماری MVC به رابط کاربری مدرن مبتنی بر Vue.js و ادغام با APIهای RESTful. بازنویسی کامپوننت‌های رابط کاربری، افزودن قابلیت‌های جدید و بهبود نگهداری‌پذیری و عملکرد پلتفرم.',
+                        technologies : 'Vue.js , Tailwind Css, vuetify',
+                        role : 'توسعه دهنده فرانت‌اند',
+                    },
+                    {
+                        title: "مشاوره آنلاین (پروژه محرمانه)",
+                        imgSrc : '/consulting.webp',
+                        description: 'توسعه رابط کاربری پلتفرم مشاوره آنلاین محرمانه با استفاده از Nuxt.js و Tailwind CSS. طراحی و بهینه‌سازی یک (PWA) واکنش‌گرا که با WebView در اپلیکیشن اندرویدی مبتنی بر Flutter ادغام شده تا تجربه‌ای روان و در دسترس در تمامی پلتفرم‌ها فراهم شود.',
+                        technologies : 'Vue.js , Tailwind Css, Nuxt.js, Flutter',
+                        role: 'توسعه‌دهنده فرانت‌اند',
+                    },
                 ],
                 emailURL : 'https://sendmail.mahdichavoshi.ir/sendMail.php',
                 emailDestination : 'mahdichavoshi14@gmail.com'
@@ -154,14 +187,13 @@ export const usePersonInformationStore = defineStore('personInformation',{
             en : {
                 name : 'Mahdi Chavoshi',
                 role: "frontend developer",
-                aboutSummary: 'Passionate frontend developer with over a year of hands-on experience, crafting captivating digital experiences. Ready to bring your web vision to life.',
-                aboutDetailed: 'I\'m Mahdi Chavoshi, A Front-End Developer And Computer Engineer Based In Tabriz,\n' +
-                    'Iran. I Specialize In Creating Captivating User Experiences With Nuxt.Js,\n' +
-                    'Vue.Js,Tailwind And Vuetify.Js.I have been employed as a Front-End Developer for\n' +
-                    'three years, with two of those years dedicated to educational pursuits at university\n' +
-                    'and one year engaged in professional work.Passionate About Continuous Learning\n' +
-                    'And Staying Up To Date With Industry Trends, My Goal Is To Make A Positive Impact\n' +
-                    'In Web Development Through Exceptional User Experiences.',
+                aboutSummary: 'Passionate frontend developer with over three years of hands-on experience, crafting captivating digital experiences. Ready to bring your web vision to life.',
+                aboutDetailed: 'I\'m Mahdi Chavoshi, a Front-End Developer and Computer Engineer based in Tabriz, Iran. I build responsive and modern web applications using Nuxt.js, Vue.js, Tailwind CSS, and Vuetify.\n' +
+                    '\n' +
+                    'With over 3 years of professional experience and a strong academic background, I\'m currently pursuing a Master\'s in Computer Architecture, researching Federated Learning and Blockchain. I\'m also the first author of an IEEE-published paper on AI model optimization for FPGA.\n' +
+                    '\n' +
+                    'I’m passionate about clean code, great UX, and creating web experiences that make an impact.\n' +
+                    '\n',
                 address : 'B5 , Moshaveran tower , Chaykenar st. , Tabriz , East azerbaijan province , Iran',
                 phoneNumber : '09141023682',
                 emailAddress : 'Mahdichavoshi14@gmail.com',
@@ -270,7 +302,7 @@ export const usePersonInformationStore = defineStore('personInformation',{
                         role : 'Frontend Developer',
                         start : '2022',
                         end : 'present',
-                        projects : 'X-ui Panel Manager'
+                        projects : 'X-ui Panel Manager - Danayan crowd - Zarin crowd - Award Maven - Consulting Platform'
                     },
                 ],
                 projects : [
@@ -284,7 +316,7 @@ export const usePersonInformationStore = defineStore('personInformation',{
                     },
                     {
                         title : "Merkato24 (Demo)",
-                        link : 'https://Merkato24.netlify.app',
+                        link : 'https://Merkato24.com',
                         imgSrc : '/merkato24.webp',
                         description : 'Merkato 24 Is A Digital Marketplace For Africa, And Its Frontend Has Been Developed Using Nuxt.Js 2, Vue.Js 2, And Vuetify 2. The Marketplace Has Three Panels: Public, User, And Admin, Which Can Be Accessed Through The URLs "/" & "/User" And "/Admin". The Frontend Development Is Already Complete And The Backend Is Currently Under Development.Merkato 24 Has A Demo Version Available.',
                         technologies : 'Nuxt.js , vuetify , Vue.js , PWA',
@@ -292,12 +324,42 @@ export const usePersonInformationStore = defineStore('personInformation',{
                     },
                     {
                         title : "X-UI Panel Manager",
-                        link : 'https://panel.gixmetir.online:5002',
                         imgSrc : '/x-uiPanelManager.webp',
                         description : 'X-ui panel manager is panel for managing x-ui panels for selling v2ray subscriptions, And Its Frontend Has Been Developed Using Vue.Js 3, And Tailwind. It has two Panels: Admin & Customer(SuperCustomer),panel\'s source code is available at github.',
                         technologies : 'Vue.js , Tailwind Css , PWA',
                         role : 'Frontend Developer',
                         github : 'https://github.com/mahdi-turrkk/x-ui-panel-manager'
+                    },
+                    {
+                        title : "Danayn Crowd",
+                        link : 'https://crowd.danayan.broker',
+                        imgSrc : '/danayan-main.webp',
+                        description : 'This website is an Iranian crowdfunding platform, a subsidiary of Danayan Brokerage. Its front end is developed using Vue.js 3 and Tailwind CSS, and it features public, user, and admin panels.',
+                        technologies : 'Vue.js , Tailwind Css',
+                        role : 'Frontend Developer',
+                    },
+                    {
+                        title : "Zarin Crowd",
+                        link : 'https://zarincrowd.com/',
+                        imgSrc : '/zarin-main.webp',
+                        description : 'This website is an Iranian crowdfunding platform operating under the supervision of Danayan Brokerage\'s financial institution. Its front end is developed using Vue.js 3 and Tailwind CSS, and it includes public, user, and admin panels.',
+                        technologies : 'Vue.js , Tailwind Css',
+                        role : 'Frontend Developer',
+                    },
+                    {
+                        title : "Award Maven",
+                        link : 'https://awardmaven.com/portal',
+                        imgSrc : '/awardMaven.webp',
+                        description : 'Contributed to migrating the legacy Award Maven portal from an MVC-based architecture to a modern Vue.js frontend integrated with RESTful APIs. Participated in refactoring UI components, implementing new features, and improving maintainability and performance across the platform.',
+                        technologies : 'Vue.js , Tailwind Css, vuetify',
+                        role : 'Frontend Developer',
+                    },
+                    {
+                        title : "Online Consulting (NDA Project)",
+                        imgSrc : '/consulting.webp',
+                        description : 'Developed the frontend of a confidential online consulting platform using Nuxt.js and Tailwind CSS. Designed and optimized a responsive PWA, which was integrated into a Flutter-based Android app via WebView to enable cross-platform accessibility and seamless mobile experience.',
+                        technologies : 'Vue.js , Tailwind Css, Nuxt.js, Flutter',
+                        role : 'Frontend Developer',
                     },
                 ],
                 emailURL : 'https://sendmail.mahdichavoshi.ir/sendMail.php',

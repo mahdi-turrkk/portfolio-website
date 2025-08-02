@@ -11,11 +11,11 @@
       </div>
     </div>
     <div class="lg:col-span-2 flex justify-center mb-12">
-      <div class="text-3xl md:text-5xl font-bold text-info-1">
+      <div class="text-2xl md:text-4xl font-bold text-info-1">
         {{ locale.contactMe }}
       </div>
     </div>
-    <div class="bg-background-2 px-10 py-4 flex flex-col rounded-lg">
+    <div class="bg-background-2 px-4 md:px-10 py-4 flex flex-col rounded-lg">
       <div class="text-center text-info-3 text-xl font-bold mb-3 mt-3">{{locale.requestCollaboration }}</div>
       <label class="z-0 px-2 pb-3 -mt-[35px] opacity-0 transition-all duration-200 text-info-3 text-lg"
              :class="{'mt-[3px] opacity-100' : name}">{{ locale.nameTitle }}</label>
@@ -37,11 +37,11 @@
         </button>
       </div>
     </div>
-    <div class="lg:px-4">
+    <div class="lg:px-4 mt-4 md:mt-0">
       <div class="flex">
         <i class="pi pi-map-marker text-primary-3 text-3xl"/>
         <a :href="info.addressUrl" target="_blank">
-        <div class="text-info-3 text-lg md:text-xl leading-loose" :class="{'mr-6 md:mr-10' : isRtl , 'ml-6 md:ml-10' : !isRtl}">
+        <div class="text-info-3 text-base md:text-xl leading-loose" :class="{'mr-6 md:mr-10' : isRtl , 'ml-6 md:ml-10' : !isRtl}">
           {{info.address}}
         </div>
         </a>
@@ -49,7 +49,7 @@
       <div class="flex mt-6">
         <i class="pi pi-envelope text-primary-3 text-3xl"/>
         <a :href="`mailto:${info.emailAddress}`" target="_blank">
-          <div class="text-info-3 text-lg md:text-xl leading-loose" :class="{'mr-6 md:mr-10' : isRtl , 'ml-6 md:ml-10' : !isRtl}">
+          <div class="text-info-3 text-base md:text-xl leading-loose" :class="{'mr-6 md:mr-10' : isRtl , 'ml-6 md:ml-10' : !isRtl}">
             {{info.emailAddress}}
           </div>
         </a>
@@ -57,7 +57,7 @@
       <div class="flex mt-6">
         <i class="pi pi-phone text-primary-3 text-3xl"/>
         <a :href="`tel:${info.englishPhoneNumber}`">
-        <div class="text-info-3 text-lg md:text-xl leading-loose" :class="{'mr-6 md:mr-10' : isRtl , 'ml-6 md:ml-10' : !isRtl}">
+        <div class="text-info-3 text-base md:text-xl leading-loose" :class="{'mr-6 md:mr-10' : isRtl , 'ml-6 md:ml-10' : !isRtl}">
           {{info.phoneNumber}}
         </div>
         </a>

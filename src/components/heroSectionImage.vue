@@ -1,8 +1,10 @@
 <template>
-  <div class="flex w-max">
-    <div class="relative z-0 shape bg-primary-3 h-[450px] w-[345px] md:h-[575px] md:w-[500px] bg-opacity-70"></div>
-    <div class="relative z-0 shape h-[550px] w-[400px] md:h-[675px] md:w-[550px] -mt-[98px] md:-mt-[98px] overflow-y-hidden flex justify-center items-end" :class="{'-mr-[373px] md:-mr-[527px]' : isRtl , '-ml-[373px] md:-ml-[527px]' : !isRtl}">
-      <img src="/src/assets/selfImage.png" class="z-20 h-[500px] md:h-[650px]" :alt="useLocalization().getLocale.name">
+  <div class="flex w-max relative z-10 md:pl-16">
+    <div class="relative z-0 shape bg-primary-3 h-[350px] w-[300px] md:h-[575px] md:w-[500px] bg-opacity-70"></div>
+    <div class="absolute z-0 h-[350px] w-[355px] md:h-[675px] md:w-[550px] -mt-[2rem] md:-mt-[5rem] flex justify-center items-end" >
+      <img src="/src/assets/selfImage.png" class="z-20 h-[355px] md:h-[650px]" :alt="useLocalization().getLocale.name"
+           :class="{'mr-12' : !isRtl , 'ml-6' : isRtl}"
+      >
     </div>
   </div>
 </template>
