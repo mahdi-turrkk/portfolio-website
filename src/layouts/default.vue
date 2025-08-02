@@ -34,7 +34,7 @@
         </div>
         <!--        toggle theme button-->
         <div class="p-2 text-2xl text-info-3 hover:text-primary-3 rounded-xl cursor-pointer transition-all duration-200"
-             @click="useDataStore().changeDarkStatus()" :class="{'ml-2' : isRtl , 'mr-2' : !isRtl}">
+             @click="changeDarkStatus" :class="{'ml-2' : isRtl , 'mr-2' : !isRtl}">
           <i class="pi pi-sun" v-if="useDataStore().getDarkStatus"/>
           <i class="pi pi-moon" v-if="!useDataStore().getDarkStatus"/>
         </div>
@@ -71,7 +71,7 @@
         </div>
         <!--        toggle theme button-->
         <div class="p-2 text-xl text-info-3 hover:text-primary-3 rounded-xl cursor-pointer transition-all duration-200"
-             @click="useDataStore().changeDarkStatus()" :class="{'ml-2' : isRtl , 'mr-2' : !isRtl}">
+             @click="changeDarkStatus" :class="{'ml-2' : isRtl , 'mr-2' : !isRtl}">
           <i class="pi pi-sun" v-if="useDataStore().getDarkStatus"/>
           <i class="pi pi-moon" v-if="!useDataStore().getDarkStatus"/>
         </div>
@@ -159,11 +159,24 @@ onMounted(() => {
     console.log(barColor.value)
     headerBackgroundColor["backdrop-blur-3xl "] = window.pageYOffset > window.innerHeight - 650;
   });
+  if(localStorage.getItem('lang') !== 'null'){
+    changeLanguage(JSON.parse(localStorage.getItem('lang')))
+  }
+  if(localStorage.getItem('isDark') !== 'null'){
+    if(useDataStore().getDarkStatus !== (localStorage.getItem('isDark') === 'true'))
+      useDataStore().changeDarkStatus();
+  }
 })
 
 const changeLanguage = (payload) => {
+  localStorage.setItem('lang' , JSON.stringify(payload))
   useLocalization().changeLanguage(payload)
   usePersonInformationStore().changeLanguage(payload)
+}
+
+const changeDarkStatus = () => {
+  useDataStore().changeDarkStatus();
+  localStorage.setItem('isDark' , useDataStore().getDarkStatus);
 }
 
 </script>
