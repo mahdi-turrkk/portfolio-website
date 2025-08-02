@@ -181,7 +181,7 @@ export const usePersonInformationStore = defineStore('personInformation',{
                         role: 'توسعه‌دهنده فرانت‌اند',
                     },
                 ],
-                emailURL : 'https://sendmail.mahdichavoshi.ir/sendMail.php',
+                emailURL : 'https://mahdichavoshi.ir',
                 emailDestination : 'mahdichavoshi14@gmail.com'
             },
             en : {
@@ -362,7 +362,7 @@ export const usePersonInformationStore = defineStore('personInformation',{
                         role : 'Frontend Developer',
                     },
                 ],
-                emailURL : 'https://sendmail.mahdichavoshi.ir/sendMail.php',
+                emailURL : 'https://mahdichavoshi.ir',
                 emailDestination : 'mahdichavoshi14@gmail.com'
             }
         }
