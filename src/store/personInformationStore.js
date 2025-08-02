@@ -182,7 +182,16 @@ export const usePersonInformationStore = defineStore('personInformation',{
                     },
                 ],
                 emailURL : 'https://mahdichavoshi.ir',
-                emailDestination : 'mahdichavoshi14@gmail.com'
+                emailDestination : 'mahdichavoshi14@gmail.com',
+                achievements: [
+                    {
+                        title : 'مقاله کنفرانس',
+                        description : 'Efficient Implementation of a Lightweight AI Classification Model for Handwriting Detection on FPGA',
+                        year : '۱۴۰۳',
+                        organization : '2024 IEEE East-West Design & Test Symposium (EWDTS)',
+                        link: 'https://doi.org/10.1109/EWDTS63723.2024.10873796',
+                    },
+                ]
             },
             en : {
                 name : 'Mahdi Chavoshi',
@@ -363,7 +372,16 @@ export const usePersonInformationStore = defineStore('personInformation',{
                     },
                 ],
                 emailURL : 'https://mahdichavoshi.ir',
-                emailDestination : 'mahdichavoshi14@gmail.com'
+                emailDestination : 'mahdichavoshi14@gmail.com',
+                achievements: [
+                    {
+                        title : 'Conference Paper',
+                        description : 'Efficient Implementation of a Lightweight AI Classification Model for Handwriting Detection on FPGA',
+                        year : '2024',
+                        organization : '2024 IEEE East-West Design & Test Symposium (EWDTS)',
+                        link: 'https://doi.org/10.1109/EWDTS63723.2024.10873796'
+                    },
+                ]
             }
         }
     },

@@ -1,7 +1,7 @@
 <template>
   <div :class="{'dark-theme' : isDark , 'light-theme' : !isDark}"
        :style="{'direction' : useLocalization().getDirection}"
-       class="appStaticColors bg-background-3 min-h-screen w-screen scrollBar"
+       class="appStaticColors bg-background-3 min-h-screen w-screen overflow-x-hidden scrollBar"
   >
     <router-view/>
   </div>

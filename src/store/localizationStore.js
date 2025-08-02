@@ -31,6 +31,7 @@ export const useLocalization = defineStore('localize', {
                     send : 'ارسال',
                     errorOccurred : 'خطایی رخ داده.دوباره تلاش کنید.',
                     inquirySubmitted : "درخواست شما ثبت شد. در اولین فرصت با شما ارتباط میگیرم.",
+                    achievements: 'دستاورد ها'
                 },
                 en: {
                     home: "Home",
@@ -55,6 +56,7 @@ export const useLocalization = defineStore('localize', {
                     send : 'Send',
                     errorOccurred : 'An error Occurred.please try again!',
                     inquirySubmitted : "Your request submitted successfully. I'll contact you as soon as possible.",
+                    achievements: 'Achievements'
                 },
             }
         }

@@ -17,6 +17,12 @@
       </div>
     </div>
     <experience-card v-for="experience in info.experiences" :detail="experience" class="mb-4"/>
+    <div class="lg:col-span-2 mb-6">
+      <div class="text-lg md:text-2xl font-bold text-info-1">
+        {{ locale.achievements }}
+      </div>
+    </div>
+    <achievement-card v-for="achievement in info.achievements" :detail="achievement" class="mb-4"/>
   </div>
 </template>
 <script setup>
@@ -25,6 +31,7 @@ import {useLocalization} from "../store/localizationStore.js";
 import EducationCard from "./educationCard.vue";
 import ExperienceCard from "./experienceCard.vue";
 import {usePersonInformationStore} from "../store/personInformationStore.js";
+import AchievementCard from "./achievementCard.vue";
 
 let locale = computed(() => {
   return useLocalization().getLocale
