@@ -50,7 +50,6 @@
   </div>
 </template>
 <script setup>
-import 'vue3-carousel/dist/carousel.css'
 import {computed, ref} from "vue";
 import {useLocalization} from "../store/localizationStore.js";
 import {useDataStore} from "../store/dataStore.js";
