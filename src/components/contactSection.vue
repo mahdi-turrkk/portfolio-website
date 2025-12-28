@@ -79,7 +79,7 @@ import {computed, ref} from "vue";
 import {useLocalization} from "../store/localizationStore.js";
 import Loader from "./loader.vue";
 import {usePersonInformationStore} from "../store/personInformationStore.js";
-import {Resend} from "resend";
+import * as emailjs from "@emailjs/browser";
 
 let locale = computed(() => {
   return useLocalization().getLocale
@@ -100,18 +100,19 @@ let showNotification = ref(false)
 let notificationType = ref('success')
 let isSendingEmail = ref(false)
 
-const resend = new Resend('re_g1vhrgN1_GzeZY9SZUDTFfZrYDGN7wDZw');
 
 const sendMail = () => {
   if(name.value && contactInfo.value){
     isSendingEmail.value = true
-    const emailBody = `<div><span style="font-size: 16px;font-weight: bold">Name: </span><span style="font-size: 16px">${name.value}</span></div><div style="margin-top : 6px"><span style="font-size: 16px;font-weight: bold">Contact Info: </span><span style="font-size: 14px">${contactInfo.value}</span></div><div style="font-size: 16px;font-weight: bold;margin-top: 6px">Message:</div><div style="font-size: 14px;margin-top: 3px">${message.value}</div>`
-    resend.emails.send({
-      from: 'Acme <onboarding@resend.dev>',
-      to: [info.value.emailDestination],
-      subject: name.value + ' from portfolio',
-      html: emailBody,
-    }).then((res) => {
+    emailjs.send('service_80ec8cg', 'template_apgcl7i', {
+          title: name.value,
+          name: name.value,
+          time: new Date(),
+          message: message.value,
+          contactInfo: contactInfo.value,
+        },
+        {publicKey: 'Y0Rxq6z_iqfFLiKBQ',}
+    ).then((res) => {
       isSendingEmail.value = false
       name.value = ''
       contactInfo.value = ''
